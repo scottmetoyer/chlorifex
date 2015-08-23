@@ -411,6 +411,7 @@
 				D2B6B0191B89682200EBE7BE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D2B6B01A1B89682200EBE7BE /* Build configuration list for PBXNativeTarget "ChlorifexTests" */ = {
 			isa = XCConfigurationList;
@@ -419,6 +420,7 @@
 				D2B6B01C1B89682200EBE7BE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
