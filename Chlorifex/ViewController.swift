@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +21,19 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
+    // MARK: UIPickerControllerDelegate
+    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    // MARK: Actions
+    @IBAction func selectImageFromPhotoGallery(sender: UIButton) {
+        let imagePickerControl = UIImagePickerController()
+        imagePickerControl.delegate = self
+        presentViewController(imagePickerControl, animated: true, completion: nil)
+        
+    }
 
 }
 
