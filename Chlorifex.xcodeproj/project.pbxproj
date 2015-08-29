@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D226339F1B9110FD0044B956 /* ImageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D226339E1B9110FD0044B956 /* ImageControl.swift */; };
+		D22633A11B9111320044B956 /* SoundReaderControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22633A01B9111320044B956 /* SoundReaderControl.swift */; };
 		D2B6AFFE1B89682200EBE7BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B6AFFD1B89682200EBE7BE /* AppDelegate.swift */; };
 		D2B6B0001B89682200EBE7BE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B6AFFF1B89682200EBE7BE /* ViewController.swift */; };
 		D2B6B0031B89682200EBE7BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2B6B0011B89682200EBE7BE /* Main.storyboard */; };
@@ -26,6 +28,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D226339E1B9110FD0044B956 /* ImageControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageControl.swift; sourceTree = "<group>"; };
+		D22633A01B9111320044B956 /* SoundReaderControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundReaderControl.swift; sourceTree = "<group>"; };
 		D2B6AFF81B89682200EBE7BE /* Chlorifex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chlorifex.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2B6AFFC1B89682200EBE7BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D2B6AFFD1B89682200EBE7BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -83,6 +87,8 @@
 				D2B6B0041B89682200EBE7BE /* Images.xcassets */,
 				D2B6B0061B89682200EBE7BE /* LaunchScreen.xib */,
 				D2B6AFFB1B89682200EBE7BE /* Supporting Files */,
+				D226339E1B9110FD0044B956 /* ImageControl.swift */,
+				D22633A01B9111320044B956 /* SoundReaderControl.swift */,
 			);
 			path = Chlorifex;
 			sourceTree = "<group>";
@@ -212,8 +218,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D22633A11B9111320044B956 /* SoundReaderControl.swift in Sources */,
 				D2B6B0001B89682200EBE7BE /* ViewController.swift in Sources */,
 				D2B6AFFE1B89682200EBE7BE /* AppDelegate.swift in Sources */,
+				D226339F1B9110FD0044B956 /* ImageControl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

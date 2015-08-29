@@ -27,6 +27,17 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         dismissViewControllerAnimated(true, completion: nil)
     }
     
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
+        // Dynamically create an ImageControl and add it to the screen
+        var imageControl = ImageControl(frame: CGRectMake(100, 200, 100, 100))
+        imageControl.backgroundColor = UIColor.greenColor()
+        imageControl.layer.cornerRadius = 15
+        imageControl.layer.borderWidth = 2
+        self.view.addSubview(imageControl)
+        
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
     // MARK: Actions
     @IBAction func selectImageFromPhotoGallery(sender: UIButton) {
         let imagePickerControl = UIImagePickerController()
