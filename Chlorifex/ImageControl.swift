@@ -13,7 +13,15 @@ class ImageControl: UIView {
         super.init(coder: aDecoder)
     }
     
-    required override init(frame aFrame: CGRect) {
-        super.init(frame: aFrame)
+    required init(image anImage: UIImage) {
+        let rect = CGRectMake(60, 60, anImage.size.width / 4, anImage.size.height / 4)
+        super.init(frame: rect)
+        
+        let imageView = UIImageView(image: anImage)
+        imageView.frame = rect
+        imageView.contentMode = .ScaleAspectFit
+        addSubview(imageView)
+        
     }
+    
 }
