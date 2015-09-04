@@ -29,13 +29,13 @@ class ImageControl: UIView {
     
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         var touch : UITouch! = touches.first as! UITouch
-        location = touch.locationInView(self)
+        location = touch.locationInView(self.superview)
         self.center = location
     }
     
     override func touchesMoved(touches: Set<NSObject>, withEvent event: UIEvent) {
         var touch : UITouch! = touches.first as! UITouch
-        location = touch.locationInView(self)
+        location = touch.locationInView(self.superview)
         self.center = location
     }
 }
