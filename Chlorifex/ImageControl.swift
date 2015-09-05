@@ -23,19 +23,19 @@ class ImageControl: UIView {
         imageView = UIImageView(image: anImage)
         imageView.frame = rect
         imageView.contentMode = .ScaleAspectFit
-        self.center = location;
         addSubview(imageView)
+        
+        // Initialize gesture recognizers
+        let panRecognizer = UIPanGestureRecognizer(target: self, action: Selector("handlePan:"))
     }
     
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
-        var touch : UITouch! = touches.first as! UITouch
-        location = touch.locationInView(self.superview)
-        self.center = location
-    }
-    
-    override func touchesMoved(touches: Set<NSObject>, withEvent event: UIEvent) {
-        var touch : UITouch! = touches.first as! UITouch
-        location = touch.locationInView(self.superview)
-        self.center = location
+    // MARK: Gesture recognizers
+    func handlePan(recognizer: UIPanGestureRecognizer) {
+        let translation = recognizer.translationInView(self)
+        if let view = recognizer.view {
+            view.center = CGPoint(x:view.center.x + translation.x,
+                y:view.center.y + translation.y)
+        }
+        recognizer.setTranslation(CGPointZero, inView: self)
     }
 }
