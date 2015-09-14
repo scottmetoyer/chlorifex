@@ -10,6 +10,7 @@ import UIKit
 
 class ImageView: UIView {
     var location = CGPoint(x: 20, y: 20)
+    var lastLocation:CGPoint = CGPointMake(20, 20)
     var imageView = UIImageView()
     
     required init(coder aDecoder: NSCoder) {
@@ -27,15 +28,20 @@ class ImageView: UIView {
         
         // Initialize gesture recognizers
         let panRecognizer = UIPanGestureRecognizer(target: self, action: Selector("handlePan:"))
+        self.gestureRecognizers = [panRecognizer]
     }
     
     // MARK: Gesture recognizers
     func handlePan(recognizer: UIPanGestureRecognizer) {
-        let translation = recognizer.translationInView(self)
-        if let view = recognizer.view {
-            view.center = CGPoint(x:view.center.x + translation.x,
-                y:view.center.y + translation.y)
-        }
-        recognizer.setTranslation(CGPointZero, inView: self)
+        let translation = recognizer.translationInView(self.superview!)
+       self.center = CGPointMake(lastLocation.x + translation.x, lastLocation.y + translation.y)
+    }
+    
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+        // Promote the touched view
+        self.superview?.bringSubviewToFront(self)
+        
+        // Remember original location
+        lastLocation = self.center
     }
 }
