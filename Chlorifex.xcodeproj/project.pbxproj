@@ -60,6 +60,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D256944F1B9B22410043377A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		D25694501B9B22470043377A /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		D25694511B9B224E0043377A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
 		D2B6AFEF1B89682200EBE7BE = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +102,9 @@
 		D2B6AFFA1B89682200EBE7BE /* Chlorifex */ = {
 			isa = PBXGroup;
 			children = (
+				D25694511B9B224E0043377A /* Controller */,
+				D25694501B9B22470043377A /* View */,
+				D256944F1B9B22410043377A /* Model */,
 				D2B6AFFD1B89682200EBE7BE /* AppDelegate.swift */,
 				D2B6AFFF1B89682200EBE7BE /* ViewController.swift */,
 				D2B6B0011B89682200EBE7BE /* Main.storyboard */,
