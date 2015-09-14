@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>60F1CE6A-252A-4485-80BF-8CFBD3D88726</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>Chlorifex</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>920BFB39791921C19C431DB6A3D8F11E05FC59FF</key>
 		<string>https://github.com/scottmetoyer/chlorifex.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Chlorifex.xcodeproj/project.xcworkspace</string>
+	<string>Chlorifex.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>920BFB39791921C19C431DB6A3D8F11E05FC59FF</key>
