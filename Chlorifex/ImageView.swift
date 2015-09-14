@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ImageControl: UIView {
+class ImageView: UIView {
     var location = CGPoint(x: 20, y: 20)
     var imageView = UIImageView()
     

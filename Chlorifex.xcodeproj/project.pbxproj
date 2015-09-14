@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D226339F1B9110FD0044B956 /* ImageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D226339E1B9110FD0044B956 /* ImageControl.swift */; };
-		D22633A11B9111320044B956 /* SoundReaderControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22633A01B9111320044B956 /* SoundReaderControl.swift */; };
+		D226339F1B9110FD0044B956 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D226339E1B9110FD0044B956 /* ImageView.swift */; };
+		D22633A11B9111320044B956 /* SoundReaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22633A01B9111320044B956 /* SoundReaderView.swift */; };
+		D25855A51BA66BC50086B2A2 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25855A41BA66BC50086B2A2 /* Image.swift */; };
+		D25855A71BA66BD70086B2A2 /* SoundReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25855A61BA66BD70086B2A2 /* SoundReader.swift */; };
 		D2B6AFFE1B89682200EBE7BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B6AFFD1B89682200EBE7BE /* AppDelegate.swift */; };
 		D2B6B0001B89682200EBE7BE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B6AFFF1B89682200EBE7BE /* ViewController.swift */; };
 		D2B6B0031B89682200EBE7BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2B6B0011B89682200EBE7BE /* Main.storyboard */; };
@@ -28,8 +30,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		D226339E1B9110FD0044B956 /* ImageControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageControl.swift; sourceTree = "<group>"; };
-		D22633A01B9111320044B956 /* SoundReaderControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundReaderControl.swift; sourceTree = "<group>"; };
+		D226339E1B9110FD0044B956 /* ImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
+		D22633A01B9111320044B956 /* SoundReaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundReaderView.swift; sourceTree = "<group>"; };
+		D25855A41BA66BC50086B2A2 /* Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		D25855A61BA66BD70086B2A2 /* SoundReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundReader.swift; sourceTree = "<group>"; };
 		D2B6AFF81B89682200EBE7BE /* Chlorifex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chlorifex.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2B6AFFC1B89682200EBE7BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D2B6AFFD1B89682200EBE7BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +67,8 @@
 		D256944F1B9B22410043377A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				D25855A41BA66BC50086B2A2 /* Image.swift */,
+				D25855A61BA66BD70086B2A2 /* SoundReader.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -70,6 +76,8 @@
 		D25694501B9B22470043377A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D226339E1B9110FD0044B956 /* ImageView.swift */,
+				D22633A01B9111320044B956 /* SoundReaderView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -77,8 +85,16 @@
 		D25694511B9B224E0043377A /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				D2B6AFFF1B89682200EBE7BE /* ViewController.swift */,
 			);
 			name = Controller;
+			sourceTree = "<group>";
+		};
+		D25855A31BA66B860086B2A2 /* Logic */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Logic;
 			sourceTree = "<group>";
 		};
 		D2B6AFEF1B89682200EBE7BE = {
@@ -102,17 +118,15 @@
 		D2B6AFFA1B89682200EBE7BE /* Chlorifex */ = {
 			isa = PBXGroup;
 			children = (
+				D25855A31BA66B860086B2A2 /* Logic */,
 				D25694511B9B224E0043377A /* Controller */,
 				D25694501B9B22470043377A /* View */,
 				D256944F1B9B22410043377A /* Model */,
 				D2B6AFFD1B89682200EBE7BE /* AppDelegate.swift */,
-				D2B6AFFF1B89682200EBE7BE /* ViewController.swift */,
 				D2B6B0011B89682200EBE7BE /* Main.storyboard */,
 				D2B6B0041B89682200EBE7BE /* Images.xcassets */,
 				D2B6B0061B89682200EBE7BE /* LaunchScreen.xib */,
 				D2B6AFFB1B89682200EBE7BE /* Supporting Files */,
-				D226339E1B9110FD0044B956 /* ImageControl.swift */,
-				D22633A01B9111320044B956 /* SoundReaderControl.swift */,
 			);
 			path = Chlorifex;
 			sourceTree = "<group>";
@@ -242,10 +256,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D22633A11B9111320044B956 /* SoundReaderControl.swift in Sources */,
+				D25855A71BA66BD70086B2A2 /* SoundReader.swift in Sources */,
+				D22633A11B9111320044B956 /* SoundReaderView.swift in Sources */,
 				D2B6B0001B89682200EBE7BE /* ViewController.swift in Sources */,
 				D2B6AFFE1B89682200EBE7BE /* AppDelegate.swift in Sources */,
-				D226339F1B9110FD0044B956 /* ImageControl.swift in Sources */,
+				D226339F1B9110FD0044B956 /* ImageView.swift in Sources */,
+				D25855A51BA66BC50086B2A2 /* Image.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

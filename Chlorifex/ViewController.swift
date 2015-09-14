@@ -30,7 +30,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
         // Dynamically create an ImageControl and add it to the screen
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
-            var imageControl = ImageControl(image: pickedImage)
+            var imageControl = ImageView(image: pickedImage)
             self.view.addSubview(imageControl)
         }
         
@@ -42,8 +42,6 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         let imagePickerControl = UIImagePickerController()
         imagePickerControl.delegate = self
         presentViewController(imagePickerControl, animated: true, completion: nil)
-        
     }
-
 }
 
