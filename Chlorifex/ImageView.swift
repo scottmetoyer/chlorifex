@@ -9,7 +9,7 @@
 import UIKit
 
 class ImageView: UIView {
-    var location = CGPoint(x: 20, y: 20)
+    var location = CGPoint(x: 70, y: 20)
     var lastLocation:CGPoint = CGPointMake(20, 20)
     var imageView = UIImageView()
     
@@ -18,13 +18,25 @@ class ImageView: UIView {
     }
     
     required init(image anImage: UIImage) {
-        let rect = CGRectMake(location.x, location.y, anImage.size.width / 4, anImage.size.height / 4)
-        super.init(frame: rect)
+        var rect = CGRectMake(location.x, location.y, anImage.size.width / 4, anImage.size.height / 4)
+        super.init(frame: CGRectMake(location.x, location.y, (anImage.size.width / 4) + 60, anImage.size.height / 4))
+        
+        super.layer.borderWidth = 1
+        super.layer.borderColor = UIColor.whiteColor().CGColor
         
         imageView = UIImageView(image: anImage)
         imageView.frame = rect
         imageView.contentMode = .ScaleAspectFit
         addSubview(imageView)
+        
+        rect = CGRectMake(0, 0, 50, 20)
+        var opacitySlider = UISlider(frame: rect);
+        opacitySlider.minimumValue = 0
+        opacitySlider.maximumValue = 100
+        opacitySlider.tintColor = UIColor.redColor()
+        opacitySlider.continuous = true
+        opacitySlider.backgroundColor = UIColor.clearColor()
+        addSubview(opacitySlider)
         
         // Initialize gesture recognizers
         let panRecognizer = UIPanGestureRecognizer(target: self, action: Selector("handlePan:"))
