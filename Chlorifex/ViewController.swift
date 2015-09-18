@@ -27,10 +27,10 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         dismissViewControllerAnimated(true, completion: nil)
     }
     
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         // Dynamically create an ImageControl and add it to the screen
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
-            var imageControl = ImageView(image: pickedImage)
+            let imageControl = ImageView(image: pickedImage)
             self.view.addSubview(imageControl)
         }
         

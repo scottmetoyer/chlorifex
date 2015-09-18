@@ -9,28 +9,29 @@
 import UIKit
 
 class ImageView: UIView {
+    let screenSize: CGRect = UIScreen.mainScreen().bounds
     var location = CGPoint(x: 70, y: 20)
     var lastLocation:CGPoint = CGPointMake(20, 20)
     var imageView = UIImageView()
     
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     
     required init(image anImage: UIImage) {
-        var rect = CGRectMake(location.x, location.y, anImage.size.width / 4, anImage.size.height / 4)
-        super.init(frame: CGRectMake(location.x, location.y, (anImage.size.width / 4) + 60, anImage.size.height / 4))
-        
+        super.init(frame: CGRectMake(0, 0, 0, 0))
         super.layer.borderWidth = 1
         super.layer.borderColor = UIColor.whiteColor().CGColor
         
+        let scale = getImageScale(anImage.size.height)
+        super.frame = CGRectMake(location.x, location.y, (anImage.size.width * scale) + 60, anImage.size.height * scale)
+        
         imageView = UIImageView(image: anImage)
-        imageView.frame = rect
+        imageView.frame = CGRectMake(0, 0, anImage.size.width * scale, anImage.size.height * scale)
         imageView.contentMode = .ScaleAspectFit
         addSubview(imageView)
         
-        rect = CGRectMake(0, 0, 50, 20)
-        var opacitySlider = UISlider(frame: rect);
+        let opacitySlider = UISlider(frame: CGRectMake(0, 0, 50, 20));
         opacitySlider.minimumValue = 0
         opacitySlider.maximumValue = 100
         opacitySlider.tintColor = UIColor.redColor()
@@ -49,11 +50,18 @@ class ImageView: UIView {
        self.center = CGPointMake(lastLocation.x + translation.x, lastLocation.y + translation.y)
     }
     
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         // Promote the touched view
         self.superview?.bringSubviewToFront(self)
         
         // Remember original location
         lastLocation = self.center
+    }
+    
+    func getImageScale(imageHeight: CGFloat) -> CGFloat {
+        let screenHeight = screenSize.height
+        
+        // Target height is 1/3 the screen height
+        return (screenHeight * 0.33) / imageHeight
     }
 }
