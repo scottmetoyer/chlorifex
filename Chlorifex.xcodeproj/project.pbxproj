@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		D226339F1B9110FD0044B956 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D226339E1B9110FD0044B956 /* ImageView.swift */; };
 		D22633A11B9111320044B956 /* SoundReaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22633A01B9111320044B956 /* SoundReaderView.swift */; };
+		D25810531BADED3C0036B6EE /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25810521BADED3C0036B6EE /* Layout.swift */; settings = {ASSET_TAGS = (); }; };
 		D25855A51BA66BC50086B2A2 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25855A41BA66BC50086B2A2 /* Image.swift */; };
 		D25855A71BA66BD70086B2A2 /* SoundReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25855A61BA66BD70086B2A2 /* SoundReader.swift */; };
 		D2B6AFFE1B89682200EBE7BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B6AFFD1B89682200EBE7BE /* AppDelegate.swift */; };
@@ -32,6 +33,7 @@
 /* Begin PBXFileReference section */
 		D226339E1B9110FD0044B956 /* ImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 		D22633A01B9111320044B956 /* SoundReaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundReaderView.swift; sourceTree = "<group>"; };
+		D25810521BADED3C0036B6EE /* Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Layout.swift; sourceTree = "<group>"; };
 		D25855A41BA66BC50086B2A2 /* Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		D25855A61BA66BD70086B2A2 /* SoundReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundReader.swift; sourceTree = "<group>"; };
 		D2B6AFF81B89682200EBE7BE /* Chlorifex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chlorifex.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -78,6 +80,7 @@
 			children = (
 				D226339E1B9110FD0044B956 /* ImageView.swift */,
 				D22633A01B9111320044B956 /* SoundReaderView.swift */,
+				D25810521BADED3C0036B6EE /* Layout.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -202,7 +205,7 @@
 			attributes = {
 				LastSwiftMigration = 0700;
 				LastSwiftUpdateCheck = 0700;
-				LastUpgradeCheck = 0640;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Scott Metoyer";
 				TargetAttributes = {
 					D2B6AFF71B89682200EBE7BE = {
@@ -262,6 +265,7 @@
 				D22633A11B9111320044B956 /* SoundReaderView.swift in Sources */,
 				D2B6B0001B89682200EBE7BE /* ViewController.swift in Sources */,
 				D2B6AFFE1B89682200EBE7BE /* AppDelegate.swift in Sources */,
+				D25810531BADED3C0036B6EE /* Layout.swift in Sources */,
 				D226339F1B9110FD0044B956 /* ImageView.swift in Sources */,
 				D25855A51BA66BC50086B2A2 /* Image.swift in Sources */,
 			);
@@ -326,6 +330,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -394,6 +399,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Chlorifex/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.scottmetoyer.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -405,6 +411,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Chlorifex/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.scottmetoyer.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -424,6 +431,7 @@
 				);
 				INFOPLIST_FILE = ChlorifexTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.scottmetoyer.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Chlorifex.app/Chlorifex";
 			};
@@ -439,6 +447,7 @@
 				);
 				INFOPLIST_FILE = ChlorifexTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.scottmetoyer.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Chlorifex.app/Chlorifex";
 			};
