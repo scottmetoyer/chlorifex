@@ -23,20 +23,24 @@ class ImageView: UIView {
         super.layer.borderWidth = 1
         super.layer.borderColor = UIColor.whiteColor().CGColor
         
-        let scale = getImageScale(anImage.size.height)
-        super.frame = CGRectMake(location.x, location.y, (anImage.size.width * scale) + 60, anImage.size.height * scale)
+        let scale = getImageScale(anImage.size.width)
+        let width = anImage.size.width * scale
+        let height = anImage.size.height * scale
+        
+        super.frame = CGRectMake(location.x, location.y, width + 100, height)
         
         imageView = UIImageView(image: anImage)
-        imageView.frame = CGRectMake(0, 0, anImage.size.width * scale, anImage.size.height * scale)
+        imageView.frame = CGRectMake(0, 0, width, height)
         imageView.contentMode = .ScaleAspectFit
         addSubview(imageView)
         
-        let opacitySlider = UISlider(frame: CGRectMake(0, 0, 50, 20));
+        let opacitySlider = UISlider(frame: CGRectMake(width + 10, 0, 90, 10));
         opacitySlider.minimumValue = 0
         opacitySlider.maximumValue = 100
         opacitySlider.tintColor = UIColor.redColor()
         opacitySlider.continuous = true
         opacitySlider.backgroundColor = UIColor.clearColor()
+        //opacitySlider.
         addSubview(opacitySlider)
         
         // Initialize gesture recognizers
@@ -58,10 +62,10 @@ class ImageView: UIView {
         lastLocation = self.center
     }
     
-    func getImageScale(imageHeight: CGFloat) -> CGFloat {
-        let screenHeight = screenSize.height
+    func getImageScale(imageWidth: CGFloat) -> CGFloat {
+        let screenWidth = screenSize.width
         
-        // Target height is 1/3 the screen height
-        return (screenHeight * 0.33) / imageHeight
+        // Target is 1/2 the screen width
+        return (screenWidth * 0.5) / imageWidth
     }
 }
