@@ -34,13 +34,18 @@ class ImageView: UIView {
         imageView.contentMode = .ScaleAspectFit
         addSubview(imageView)
         
-        let opacitySlider = UISlider(frame: CGRectMake(width + 10, 0, 90, 10));
+        let opacityLabel = UILabel(frame: CGRectMake(width + 10, 0, 90, 10))
+        opacityLabel.text = "Opacity"
+        opacityLabel.textColor = UIColor.whiteColor()
+        opacityLabel.font = UIFont.systemFontOfSize(10.0)
+        addSubview(opacityLabel)
+        
+        let opacitySlider = UISlider(frame: CGRectMake(width + 10, 20, 90, 10))
         opacitySlider.minimumValue = 0
         opacitySlider.maximumValue = 100
         opacitySlider.tintColor = UIColor.redColor()
         opacitySlider.continuous = true
         opacitySlider.backgroundColor = UIColor.clearColor()
-        //opacitySlider.
         addSubview(opacitySlider)
         
         // Initialize gesture recognizers
