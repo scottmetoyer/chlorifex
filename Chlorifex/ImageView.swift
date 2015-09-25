@@ -29,6 +29,7 @@ class ImageView: UIView {
         
         super.frame = CGRectMake(location.x, location.y, width + 100, height)
         
+        
         imageView = UIImageView(image: anImage)
         imageView.frame = CGRectMake(0, 0, width, height)
         imageView.contentMode = .ScaleAspectFit
@@ -37,7 +38,7 @@ class ImageView: UIView {
         let opacityLabel = UILabel(frame: CGRectMake(width + 10, 0, 90, 10))
         opacityLabel.text = "Opacity"
         opacityLabel.textColor = UIColor.whiteColor()
-        opacityLabel.font = UIFont.systemFontOfSize(10.0)
+        opacityLabel.font = UIFont.systemFontOfSize(14.0)
         addSubview(opacityLabel)
         
         let opacitySlider = UISlider(frame: CGRectMake(width + 10, 20, 90, 10))
