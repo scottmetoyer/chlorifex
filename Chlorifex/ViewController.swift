@@ -41,6 +41,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     @IBAction func selectImageFromPhotoGallery(sender: UIButton) {
         let imagePickerControl = UIImagePickerController()
         imagePickerControl.delegate = self
+        imagePickerControl.modalPresentationStyle = UIModalPresentationStyle.CurrentContext
         presentViewController(imagePickerControl, animated: true, completion: nil)
     }
 }
