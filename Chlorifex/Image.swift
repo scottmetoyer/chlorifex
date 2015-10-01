@@ -10,4 +10,6 @@ import UIKit
 
 class Image: NSObject {
     var file: String!
+    var opacity: Int!
+    var saturation: Int!
 }
