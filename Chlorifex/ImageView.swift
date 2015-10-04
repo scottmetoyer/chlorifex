@@ -57,7 +57,25 @@ class ImageView: UIView {
     // MARK: Gesture recognizers
     func handlePan(recognizer: UIPanGestureRecognizer) {
         let translation = recognizer.translationInView(self.superview!)
-       self.center = CGPointMake(lastLocation.x + translation.x, lastLocation.y + translation.y)
+        let velocity = recognizer.velocityInView(self.superview!)
+        
+        if (recognizer.state == UIGestureRecognizerState.Began) {
+        } else if (recognizer.state == UIGestureRecognizerState.Changed) {
+            // Track the movement
+            self.center = CGPointMake(lastLocation.x + translation.x, lastLocation.y + translation.y)
+        } else if (recognizer.state == UIGestureRecognizerState.Ended) {
+            // Animate to final position
+            let finalPosition = CGPointMake(0, 0)
+            
+            UIView.animateWithDuration(
+                0.4,
+                delay: 0.0,
+                options: UIViewAnimationOptions.CurveEaseOut,
+                animations: {
+                    self.center = finalPosition
+                },
+                completion: nil
+        )}
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
