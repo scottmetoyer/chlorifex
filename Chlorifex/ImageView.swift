@@ -64,18 +64,23 @@ class ImageView: UIView {
             // Track the movement
             self.center = CGPointMake(lastLocation.x + translation.x, lastLocation.y + translation.y)
         } else if (recognizer.state == UIGestureRecognizerState.Ended) {
+            self.center = CGPointMake(lastLocation.x + translation.x, lastLocation.y + translation.y)
+            
+
             // Animate to final position
-            let finalPosition = CGPointMake(0, 0)
+            let finalPosition = CGPointMake(self.center.x + (velocity.x / 10), self.center.y + (velocity.y / 10))
             
             UIView.animateWithDuration(
-                0.4,
+                0.2,
                 delay: 0.0,
                 options: UIViewAnimationOptions.CurveEaseOut,
                 animations: {
                     self.center = finalPosition
                 },
                 completion: nil
-        )}
+            )
+            print(velocity)
+        }
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
