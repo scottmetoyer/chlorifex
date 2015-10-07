@@ -13,6 +13,7 @@ class ImageView: UIView {
     var location = CGPoint(x: 70, y: 20)
     var lastLocation:CGPoint = CGPointMake(20, 20)
     var imageView = UIImageView()
+    var lastChange = CFAbsoluteTimeGetCurrent()
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -61,25 +62,33 @@ class ImageView: UIView {
         
         if (recognizer.state == UIGestureRecognizerState.Began) {
         } else if (recognizer.state == UIGestureRecognizerState.Changed) {
+            // Record the time to calculate true end velocity
+            lastChange = CFAbsoluteTimeGetCurrent()
+            
             // Track the movement
             self.center = CGPointMake(lastLocation.x + translation.x, lastLocation.y + translation.y)
         } else if (recognizer.state == UIGestureRecognizerState.Ended) {
+            let curTime = CFAbsoluteTimeGetCurrent()
+            let timeElapsed = curTime - lastChange
+           
             self.center = CGPointMake(lastLocation.x + translation.x, lastLocation.y + translation.y)
-            
-
+           
             // Animate to final position
-            let finalPosition = CGPointMake(self.center.x + (velocity.x / 10), self.center.y + (velocity.y / 10))
-            
-            UIView.animateWithDuration(
-                0.2,
-                delay: 0.0,
-                options: UIViewAnimationOptions.CurveEaseOut,
-                animations: {
-                    self.center = finalPosition
-                },
-                completion: nil
-            )
-            print(velocity)
+            if (timeElapsed < 0.03) {
+                let finalPosition = CGPointMake(self.center.x + (velocity.x / 10), self.center.y + (velocity.y / 10))
+                
+                UIView.animateWithDuration(
+                    0.5,
+                    delay: 0,
+                    options: UIViewAnimationOptions.CurveEaseOut,
+                    animations: {
+                        self.center = finalPosition
+                    },
+                    completion: nil
+                )
+                
+                print(timeElapsed)
+            }
         }
     }
     

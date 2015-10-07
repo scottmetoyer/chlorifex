@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Chlorifex/ImageView.swift"
-            timestampString = "465791147.463066"
+            timestampString = "465873486.054571"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "71"
-            endingLineNumber = "71"
+            startingLineNumber = "91"
+            endingLineNumber = "91"
             landmarkName = "handlePan(_:)"
             landmarkType = "5">
          </BreakpointContent>
