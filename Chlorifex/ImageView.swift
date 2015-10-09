@@ -30,10 +30,10 @@ class ImageView: UIView {
         
         super.frame = CGRectMake(location.x, location.y, width + 100, height)
         
-        
         imageView = UIImageView(image: anImage)
         imageView.frame = CGRectMake(0, 0, width, height)
         imageView.contentMode = .ScaleAspectFit
+        imageView.userInteractionEnabled = true
         addSubview(imageView)
         
         let opacityLabel = UILabel(frame: CGRectMake(width + 10, 0, 90, 10))
@@ -52,7 +52,7 @@ class ImageView: UIView {
         
         // Initialize gesture recognizers
         let panRecognizer = UIPanGestureRecognizer(target: self, action: Selector("handlePan:"))
-        self.gestureRecognizers = [panRecognizer]
+        imageView.addGestureRecognizer(panRecognizer)
     }
     
     // MARK: Gesture recognizers
