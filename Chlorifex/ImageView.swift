@@ -45,9 +45,10 @@ class ImageView: UIView {
         let opacitySlider = UISlider(frame: CGRectMake(width + 10, 20, 90, 10))
         opacitySlider.minimumValue = 0
         opacitySlider.maximumValue = 100
-        opacitySlider.tintColor = UIColor.redColor()
+        opacitySlider.minimumTrackTintColor = UIColor.yellowColor()
         opacitySlider.continuous = true
-        opacitySlider.backgroundColor = UIColor.clearColor()
+        opacitySlider.backgroundColor = UIColor.darkGrayColor()
+        opacitySlider.setThumbImage(UIImage(named: "sliderTriangleHandle")!, forState: .Normal)
         addSubview(opacitySlider)
         
         // Initialize gesture recognizers
