@@ -54,9 +54,17 @@ class ImageView: UIView {
         // Initialize gesture recognizers
         let panRecognizer = UIPanGestureRecognizer(target: self, action: Selector("handlePan:"))
         imageView.addGestureRecognizer(panRecognizer)
+        
+        let pinchRecognizer = UIPinchGestureRecognizer(target: self, action: Selector("handlePinch:"))
+        imageView.addGestureRecognizer(pinchRecognizer)
     }
     
     // MARK: Gesture recognizers
+    func handlePinch(recognizer: UIPinchGestureRecognizer) {
+        self.transform = CGAffineTransformScale(self.transform, recognizer.scale, recognizer.scale)
+        recognizer.scale = 1
+    }
+    
     func handlePan(recognizer: UIPanGestureRecognizer) {
         let translation = recognizer.translationInView(self.superview!)
         let velocity = recognizer.velocityInView(self.superview!)
