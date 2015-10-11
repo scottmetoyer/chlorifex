@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ImageView: UIView {
+class ImageView: UIView, UIGestureRecognizerDelegate {
     let screenSize: CGRect = UIScreen.mainScreen().bounds
     var location = CGPoint(x: 70, y: 20)
     var lastLocation:CGPoint = CGPointMake(20, 20)
@@ -107,6 +107,10 @@ class ImageView: UIView {
         
         // Remember original location
         lastLocation = self.center
+    }
+    
+    func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWithGestureRecognizer otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
     }
     
     func getImageScale(imageWidth: CGFloat) -> CGFloat {
