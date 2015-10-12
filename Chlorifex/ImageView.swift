@@ -28,7 +28,7 @@ class ImageView: UIView, UIGestureRecognizerDelegate {
         let width = anImage.size.width * scale
         let height = anImage.size.height * scale
         
-        super.frame = CGRectMake(location.x, location.y, width + 100, height)
+        super.frame = CGRectMake(location.x, location.y, width + 140, height)
         
         imageView = UIImageView(image: anImage)
         imageView.frame = CGRectMake(0, 0, width, height)
@@ -36,19 +36,20 @@ class ImageView: UIView, UIGestureRecognizerDelegate {
         imageView.userInteractionEnabled = true
         addSubview(imageView)
         
-        let opacityLabel = UILabel(frame: CGRectMake(width + 10, 0, 90, 10))
+        let opacityLabel = UILabel(frame: CGRectMake(width + 10, 0, 130, 10))
         opacityLabel.text = "Opacity"
         opacityLabel.textColor = UIColor.whiteColor()
         opacityLabel.font = UIFont.systemFontOfSize(14.0)
         addSubview(opacityLabel)
         
-        let opacitySlider = UISlider(frame: CGRectMake(width + 10, 20, 90, 10))
+        let opacitySlider = UISlider(frame: CGRectMake(width + 10, 20, 130, 10))
         opacitySlider.minimumValue = 0
-        opacitySlider.maximumValue = 100
+        opacitySlider.maximumValue = 1
         opacitySlider.minimumTrackTintColor = UIColor.yellowColor()
         opacitySlider.continuous = true
         opacitySlider.backgroundColor = UIColor.darkGrayColor()
         opacitySlider.setThumbImage(UIImage(named: "sliderTriangleHandle")!, forState: .Normal)
+        opacitySlider.addTarget(self, action: "opacityValueDidChange:", forControlEvents: .ValueChanged)
         addSubview(opacitySlider)
         
         // Initialize gesture recognizers
@@ -57,6 +58,12 @@ class ImageView: UIView, UIGestureRecognizerDelegate {
         
         let pinchRecognizer = UIPinchGestureRecognizer(target: self, action: Selector("handlePinch:"))
         imageView.addGestureRecognizer(pinchRecognizer)
+    }
+    
+    // MARK: Event handlers
+    func opacityValueDidChange(sender:UISlider!)
+    {
+        
     }
     
     // MARK: Gesture recognizers
