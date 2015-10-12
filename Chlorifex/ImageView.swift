@@ -48,7 +48,7 @@ class ImageView: UIView, UIGestureRecognizerDelegate {
         opacitySlider.minimumTrackTintColor = UIColor.yellowColor()
         opacitySlider.continuous = true
         opacitySlider.backgroundColor = UIColor.darkGrayColor()
-        opacitySlider.setThumbImage(UIImage(named: "sliderTriangleHandle")!, forState: .Normal)
+        // opacitySlider.setThumbImage(UIImage(named: "sliderTriangleHandle")!, forState: .Normal)
         opacitySlider.addTarget(self, action: "opacityValueDidChange:", forControlEvents: .ValueChanged)
         addSubview(opacitySlider)
         
