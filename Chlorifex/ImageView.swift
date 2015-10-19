@@ -43,8 +43,9 @@ class ImageView: UIView, UIGestureRecognizerDelegate {
         addSubview(opacityLabel)
         
         let opacitySlider = UISlider(frame: CGRectMake(width + 10, 20, 130, 10))
-        opacitySlider.minimumValue = 0
+        opacitySlider.minimumValue = 0.1
         opacitySlider.maximumValue = 1
+        opacitySlider.value = 1
         opacitySlider.minimumTrackTintColor = UIColor.yellowColor()
         opacitySlider.continuous = true
         opacitySlider.backgroundColor = UIColor.darkGrayColor()
@@ -63,7 +64,7 @@ class ImageView: UIView, UIGestureRecognizerDelegate {
     // MARK: Event handlers
     func opacityValueDidChange(sender:UISlider!)
     {
-        
+        imageView.alpha = CGFloat(sender.value)
     }
     
     // MARK: Gesture recognizers
